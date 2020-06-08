@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title> Marck MR</title>
+
+        <link rel="icon" type="image/jpg" href="images/logo.png">
+
+        <meta charset="UTF-8"/> 
+
+        <link rel="stylesheet" href="css/estilo.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Source+Sans+Pro&display=swap" rel="stylesheet">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+
+
+    <body>
+        <i class="icon-menu burger-button" id="burger-menu"></i>
+
+
+        <header class="header">
+            <div class="container">
+                <figure class="logo">
+                        <img alt="logotipo" width=100px height=100px src="images/logo.png">
+                </figure>
+                <nav class="menu">
+                    <ol>
+                        <li>
+                            <a class="link" href="#portafolio">Portafolio</a>
+                        </li>
+                        <li>
+                            <a class="link" href="#eventos">Experiencia</a>
+                            </li>
+                        <li>
+                            <a class="link" href="#contacto">trabajemos juntos</a>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+
+
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h1> 
+                    Hola soy <strong>Marck MR</strong><br> desarrollador web
+                </h1>
+                <img class="hero-image" src="images/mifoto.jpg" width="500" height="300" alt="image">
+            </div>
+        </section>
+
+        <section id="portafolio" class="portfolio">
+            <div class="container">
+                <h2>
+                    Portafolio (Proyectos Destacados)
+                </h2>
+
+                <article class="project">
+                    <div class="project-details">
+                        <h3 class="project-title">Proyecto 1</h3>
+                        <h6 class="project-number">este es el proyecto numero 1</h6>
+                        <p class="project-date"><small><strong>Fecha:</strong> 01/01/2020</small></p>
+                        <p class="project-description">Esto es una explicación de este proyecto</p>
+                    </div>
+                    <figure class="project-imageContainer">
+                        <img src="images/proyecto1.jpg" width="500px" alt="imagen del proyecto">
+                    </figure>
+                    
+                </article>
+
+                <article class="project">
+                    <div class="project-details">
+                        <h3 class="project-title">Proyecto 2</h3>
+                        <h6 class="project-number">este es el proyecto numero 2</h6>
+                        <p class="project-date"><small><strong>Fecha:</strong> 01/01/2020</small></p>
+                        <p class="project-description">Esto es una explicación de este proyecto</p>
+                    </div>
+                    <figure class="project-imageContainer">
+                        <img src="images/proyecto2.jpg" width="500px" alt="imagen del proyecto">
+                    </figure>
+                    
+                </article>
+            </div>
+        </section>
+
+        
+        <div class="container">
+            <h2 class="event-list-title">Más sobre mi experiencia</h2>
+        </div>
+
+
+        <section id="eventos" class="event-list">
+            
+
+                <article class="event">
+                    <figure class="event-imageContainer">
+                    <img class="event-image" src="images/logo.jpg" width=500/>
+                    </figure>
+                    <div class="event-detail">
+                        <h3 class="event-title">mucho tiempo programando</h3>
+                        <p class="event-description">he pasado algunos años como programador amateur, programo en mis ratos libres y cuando requiero cumplir un trabajo</p>
+                        <a class="event-url" href="https://www.youtube.com/watch?v=hJCBfdI4FyQ" target="_blank" >ver más</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="contacto" class="contact">
+            
+            <div class="container">
+                <form action="/suscripcion/" class="form-email">
+                    <h3>Algo que comunicarme?</h3>
+                    <input type="text" placeholder="Déjame tu email" id="email">
+                    <button>Enviar</button>
+                </form>
+
+                <div class="social">
+                    <a href="https://twitter.com/Mr_MarckosMr" class="social-link twitter"></a>
+                    <a href="https://www.facebook.com/marck.ronquillo.5" class="social-link facebook"></a>
+                    <a href="https://github.com/MMarck" class="social-link github"></a>
+                    <a href="https://www.instagram.com/marck_ronquillo/?hl=es-la" class="social-link instagram"></a>
+
+                </div>
+            </div>
+
+        </section>
+
+        <footer class="footer">
+        
+            <div class="container">
+                <div>
+                    <p>Realizado en el 2020</p>
+                </div>
+            </div>
+
+        </footer>
+
+        <script>
+
+            const menu = document.querySelector('.menu');
+            const burger = document.querySelector('#burger-menu');
+
+            function hideShow(){
+                if(menu.classList.contains('is-active')){
+                    menu.classList.remove('is-active');
+                }
+                else{
+                    menu.classList.add('is-active');
+                }
+                
+            }
+
+            var ipad = window.matchMedia('screen and (max-width: 767px)');
+            ipad.addListener(validation)
+
+            function validation(event) {
+                if(event.matches){
+                    burger.addEventListener('click', hideShow);
+                }else{
+                    burger.removeEventListener('click', hideShow);
+                }
+            }
+            
+            validation(ipad);
+
+
+        </script>
+
+    </body>
+</html>
